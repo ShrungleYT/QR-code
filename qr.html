@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LumaWave QR — Stunning Free QR Code Generator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="Create beautiful professional QR codes in seconds. Free, fast, customizable with colors, backgrounds, sizes and more. No signup needed.">
+<meta name="keywords" content="QR Code Generator, Free QR Code, Create QR, Business QR, Restaurant QR, WiFi QR, Professional QR">
+<meta name="author" content="LumaWave">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins", Arial;
+scroll-behavior:smooth;
+}
+
+body{
+background:#020617;
+color:white;
+}
+
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+position:sticky;
+top:0;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(15px);
+z-index:99;
+}
+
+.logo{
+font-size:26px;
+font-weight:800;
+letter-spacing:1px;
+color:#818cf8;
+}
+
+nav a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+opacity:0.8;
+transition:0.3s;
+}
+
+nav a:hover{
+opacity:1;
+color:#a5b4fc;
+}
+
+/* HERO */
+.hero{
+height:80vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:radial-gradient(circle at top,#1e1b4b,#020617);
+padding:0 10%;
+}
+
+.hero h1{
+font-size:42px;
+line-height:1.2;
+}
+
+.hero span{
+color:#a5b4fc;
+}
+
+.hero p{
+margin-top:10px;
+opacity:0.8;
+font-size:17px;
+}
+
+.hero button{
+margin-top:25px;
+padding:12px 22px;
+border-radius:14px;
+border:none;
+font-size:16px;
+background:linear-gradient(135deg,#6366f1,#4f46e5);
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.hero button:hover{
+transform:scale(1.06);
+}
+
+/* SECTION TITLE */
+.section-title{
+text-align:center;
+margin-top:50px;
+font-size:24px;
+}
+
+/* GENERATOR CONTAINER */
+.generator{
+width:450px;
+max-width:95%;
+margin:30px auto;
+padding:30px;
+border-radius:25px;
+background:rgba(255,255,255,0.09);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.1);
+box-shadow:0 0 60px rgba(99,102,241,0.6);
+text-align:center;
+transition:0.3s;
+}
+
+.generator:hover{
+transform:scale(1.01);
+}
+
+input,select{
+width:100%;
+padding:11px;
+border-radius:12px;
+border:none;
+outline:none;
+margin-top:8px;
+font-size:14px;
+background:rgba(255,255,255,0.12);
+color:white;
+}
+
+.row{
+display:flex;
+gap:10px;
+margin-top:10px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:12px;
+border-radius:14px;
+border:none;
+font-size:15px;
+background:linear-gradient(135deg,#6366f1,#4f46e5);
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-2px);
+}
+
+.preview{
+margin-top:20px;
+}
+
+img{
+border-radius:14px;
+box-shadow:0 0 25px rgba(99,102,241,0.6);
+}
+
+.download{
+background:linear-gradient(135deg,#22c55e,#16a34a);
+}
+
+.features{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+padding:40px 10%;
+}
+
+.card{
+width:250px;
+padding:20px;
+border-radius:20px;
+background:rgba(255,255,255,0.08);
+text-align:center;
+}
+
+.card h3{
+margin-bottom:8px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:35px;
+opacity:0.8;
+background:#020617;
+margin-top:40px;
+font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">LumaWave</div>
+<div>
+<a href="#home">Home</a>
+<a href="#generator">Generate</a>
+<a href="#features">Features</a>
+</div>
+</nav>
+
+<section class="hero" id="home">
+<div>
+<h1>Create <span>Professional QR Codes</span><br>In Seconds</h1>
+<p>Powerful, beautiful, customizable QR generator. Free forever.</p>
+<a href="#generator"><button>Start Creating</button></a>
+</div>
+</section>
+
+<h2 class="section-title" id="generator">QR Code Generator</h2>
+
+<div class="generator">
+
+<input type="text" id="text" placeholder="Enter text / URL">
+
+<div class="row">
+<select id="size">
+<option value="200">200x200</option>
+<option value="300" selected>300x300</option>
+<option value="400">400x400</option>
+<option value="500">500x500</option>
+</select>
+
+<select id="ecc">
+<option value="L">Low</option>
+<option value="M" selected>Medium</option>
+<option value="Q">High</option>
+<option value="H">Maximum</option>
+</select>
+</div>
+
+<div class="row">
+<input type="color" id="color" value="#000000">
+<input type="color" id="bg" value="#ffffff">
+</div>
+
+<div class="row">
+<select id="margin">
+<option value="1">Small</option>
+<option value="10" selected>Normal</option>
+<option value="20">Large</option>
+</select>
+
+<select id="format">
+<option value="png">PNG</option>
+<option value="jpg">JPG</option>
+</select>
+</div>
+
+<button onclick="generateQR()">Generate QR</button>
+
+<div class="preview" id="qrBox"></div>
+
+<a id="downloadBtn" style="display:none;">
+<button class="download">Download QR</button>
+</a>
+
+</div>
+
+<h2 class="section-title" id="features">Why People Love LumaWave</h2>
+
+<div class="features">
+<div class="card">
+<h3>⚡ Instant</h3>
+<p>Lightning fast QR generation.</p>
+</div>
+
+<div class="card">
+<h3>🎨 Customizable</h3>
+<p>Colors, sizes, backgrounds.</p>
+</div>
+
+<div class="card">
+<h3>💎 Super Clean</h3>
+<p>Looks premium. Feels premium.</p>
+</div>
+
+<div class="card">
+<h3>📱 Mobile Perfect</h3>
+<p>Works on all devices.</p>
+</div>
+</div>
+
+<footer>
+Made with ❤️ by LumaWave • Free Forever
+</footer>
+
+<script>
+function generateQR(){
+let text=document.getElementById("text").value;
+let size=document.getElementById("size").value;
+let ecc=document.getElementById("ecc").value;
+let color=document.getElementById("color").value.replace("#","");
+let bg=document.getElementById("bg").value.replace("#","");
+let margin=document.getElementById("margin").value;
+let format=document.getElementById("format").value;
+
+if(text.trim()===""){alert("Enter something first 😭");return;}
+
+let url=`https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(text)}&color=${color}&bgcolor=${bg}&qzone=${margin}&ecc=${ecc}&format=${format}`;
+
+document.getElementById("qrBox").innerHTML=`<img src="${url}" width="${size}">`;
+let d=document.getElementById("downloadBtn");
+d.href=url;
+d.download="lumawave_qr."+format;
+d.style.display="block";
+}
+</script>
+
+</body>
+</html>
