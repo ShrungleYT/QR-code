@@ -1,207 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="ymolI3VD6rb4G3Tj8t-HsyQ2ELBoN2VdRST9vw3B1eU" />
 <meta charset="UTF-8">
-<title>LumaWave QR — Stunning Free QR Code Generator</title>
+<title>LumaWave QR — Best Free Professional QR Code Generator</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="description" content="Create beautiful professional QR codes in seconds. Free, fast, customizable with colors, backgrounds, sizes and more. No signup needed.">
-<meta name="keywords" content="QR Code Generator, Free QR Code, Create QR, Business QR, Restaurant QR, WiFi QR, Professional QR">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap" rel="stylesheet">
+
+<meta name="description" content="Create beautiful premium QR codes instantly. Free forever. Custom colors, shapes, PNG & SVG, WiFi QR, Business QR & more. No login required. LumaWave QR Code Generator.">
+<meta name="keywords" content="QR Code Generator, Free QR Code, Custom QR Code, SVG QR Code, PNG QR Code, WiFi QR Code, Professional QR Maker">
 <meta name="author" content="LumaWave">
 
+<meta property="og:title" content="LumaWave QR — Stunning Free Premium QR Code Generator">
+<meta property="og:description" content="Create beautiful professional QR codes in seconds. Free forever. No signup.">
+<meta property="og:type" content="website">
+
+<script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0/lib/qr-code-styling.js"></script>
+
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:"Poppins", Arial;
-scroll-behavior:smooth;
-}
 
-body{
-background:#020617;
-color:white;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;scroll-behavior:smooth;}
 
-/* NAVBAR */
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-position:sticky;
-top:0;
-background:rgba(0,0,0,0.4);
-backdrop-filter:blur(15px);
-z-index:99;
-}
+body{background:#030014;color:white}
 
-.logo{
-font-size:26px;
-font-weight:800;
-letter-spacing:1px;
-color:#818cf8;
-}
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 9%;background:rgba(255,255,255,.05);backdrop-filter:blur(25px);border-bottom:1px solid rgba(255,255,255,.15);position:sticky;top:0;z-index:100}
 
-nav a{
-color:white;
-margin-left:25px;
-text-decoration:none;
-opacity:0.8;
-transition:0.3s;
-}
+.logo{font-size:30px;font-weight:900;letter-spacing:1px;background:linear-gradient(135deg,#7dd3fc,#818cf8,#c084fc);-webkit-background-clip:text;color:transparent}
 
-nav a:hover{
-opacity:1;
-color:#a5b4fc;
-}
+nav a{color:white;margin-left:25px;text-decoration:none;opacity:.8;transition:.3s}
+nav a:hover{opacity:1;color:#c7d2fe}
 
 /* HERO */
-.hero{
-height:80vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:radial-gradient(circle at top,#1e1b4b,#020617);
-padding:0 10%;
-}
+.hero{height:85vh;display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;background: radial-gradient(circle at top,#1e1b4b,#020617);}
+.hero h1{font-size:52px;font-weight:900;line-height:1.2}
+.hero span{background:linear-gradient(135deg,#7dd3fc,#818cf8,#c084fc);-webkit-background-clip:text;color:transparent}
+.hero p{margin-top:12px;opacity:.8;font-size:18px}
+.hero button{margin-top:35px;padding:14px 28px;border-radius:18px;border:none;font-size:18px;background:linear-gradient(135deg,#818cf8,#6366f1,#4f46e5);box-shadow:0 0 40px rgba(99,102,241,.7);color:white;cursor:pointer;transition:.3s}
+.hero button:hover{transform:scale(1.08)}
 
-.hero h1{
-font-size:42px;
-line-height:1.2;
-}
+/* MAIN PANEL */
+.container{max-width:1200px;margin:50px auto;display:flex;gap:25px;flex-wrap:wrap;justify-content:center}
+.panel{flex:1;min-width:380px;padding:25px;border-radius:28px;background:rgba(255,255,255,.08);backdrop-filter:blur(25px);border:1px solid rgba(255,255,255,.1);box-shadow:0 0 40px rgba(129,140,248,.4)}
+.panel h3{margin-bottom:10px}
 
-.hero span{
-color:#a5b4fc;
-}
+/* INPUTS */
+input,select{width:100%;padding:13px;border-radius:14px;border:none;margin-top:8px;font-size:14px;background:rgba(255,255,255,.12);color:white}
+.row{display:flex;gap:12px;margin-top:10px}
+button{width:100%;padding:14px;margin-top:12px;border-radius:15px;border:none;font-size:15px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;cursor:pointer;transition:.3s}
+button:hover{transform:translateY(-2px)}
 
-.hero p{
-margin-top:10px;
-opacity:0.8;
-font-size:17px;
-}
+/* PREVIEW */
+.preview{text-align:center}
+.preview-box{width:340px;height:340px;margin:auto;display:flex;justify-content:center;align-items:center}
 
-.hero button{
-margin-top:25px;
-padding:12px 22px;
-border-radius:14px;
-border:none;
-font-size:16px;
-background:linear-gradient(135deg,#6366f1,#4f46e5);
-color:white;
-cursor:pointer;
-transition:0.3s;
-}
+/* FEATURES */
+.section-title{text-align:center;font-size:30px;margin-top:50px}
+.features{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;padding:40px 9%}
+.card{width:250px;padding:22px;border-radius:22px;background:rgba(255,255,255,0.08);text-align:center;transition:.3s}
+.card:hover{transform:translateY(-6px)}
 
-.hero button:hover{
-transform:scale(1.06);
-}
-
-/* SECTION TITLE */
-.section-title{
-text-align:center;
-margin-top:50px;
-font-size:24px;
-}
-
-/* GENERATOR CONTAINER */
-.generator{
-width:450px;
-max-width:95%;
-margin:30px auto;
-padding:30px;
-border-radius:25px;
-background:rgba(255,255,255,0.09);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.1);
-box-shadow:0 0 60px rgba(99,102,241,0.6);
-text-align:center;
-transition:0.3s;
-}
-
-.generator:hover{
-transform:scale(1.01);
-}
-
-input,select{
-width:100%;
-padding:11px;
-border-radius:12px;
-border:none;
-outline:none;
-margin-top:8px;
-font-size:14px;
-background:rgba(255,255,255,0.12);
-color:white;
-}
-
-.row{
-display:flex;
-gap:10px;
-margin-top:10px;
-}
-
-button{
-width:100%;
-padding:12px;
-margin-top:12px;
-border-radius:14px;
-border:none;
-font-size:15px;
-background:linear-gradient(135deg,#6366f1,#4f46e5);
-color:white;
-cursor:pointer;
-transition:0.3s;
-}
-
-button:hover{
-transform:translateY(-2px);
-}
-
-.preview{
-margin-top:20px;
-}
-
-img{
-border-radius:14px;
-box-shadow:0 0 25px rgba(99,102,241,0.6);
-}
-
-.download{
-background:linear-gradient(135deg,#22c55e,#16a34a);
-}
-
-.features{
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
-padding:40px 10%;
-}
-
-.card{
-width:250px;
-padding:20px;
-border-radius:20px;
-background:rgba(255,255,255,0.08);
-text-align:center;
-}
-
-.card h3{
-margin-bottom:8px;
-}
+/* FAQ */
+.faq{max-width:900px;margin:60px auto;background:rgba(255,255,255,.08);padding:35px;border-radius:25px;border:1px solid rgba(255,255,255,.1)}
+.faq h2{text-align:center;font-size:30px;margin-bottom:15px}
+.qa{margin-top:15px;padding:12px;border-radius:16px;background:rgba(0,0,0,.35)}
+.qa h3{font-size:17px;margin-bottom:6px;color:#a5b4fc;}
 
 /* FOOTER */
-footer{
-text-align:center;
-padding:35px;
-opacity:0.8;
-background:#020617;
-margin-top:40px;
-font-size:14px;
-}
+footer{text-align:center;padding:35px;opacity:.8;margin-top:40px}
+
 </style>
 </head>
 
@@ -210,36 +77,40 @@ font-size:14px;
 <nav>
 <div class="logo">LumaWave</div>
 <div>
-<a href="#home">Home</a>
 <a href="#generator">Generate</a>
 <a href="#features">Features</a>
+<a href="#faq">FAQ</a>
 </div>
 </nav>
 
-<section class="hero" id="home">
-<div>
-<h1>Create <span>Professional QR Codes</span><br>In Seconds</h1>
-<p>Powerful, beautiful, customizable QR generator. Free forever.</p>
-<a href="#generator"><button>Start Creating</button></a>
-</div>
+<section class="hero">
+<h1>Create <span>Beautiful Premium QR Codes</span> Instantly</h1>
+<p>Fast • Custom • Powerful — Built for creators & businesses</p>
+<a href="#generator"><button>Get Started</button></a>
 </section>
 
 <h2 class="section-title" id="generator">QR Code Generator</h2>
 
-<div class="generator">
+<div class="container">
+<div class="panel">
+<h3>Create QR</h3>
 
-<input type="text" id="text" placeholder="Enter text / URL">
+<select id="mode">
+<option value="url">Website / Link</option>
+<option value="text">Plain Text</option>
+<option value="wifi">WiFi QR</option>
+<option value="card">Business Card</option>
+</select>
+
+<input type="text" id="mainInput" placeholder="Enter URL or Text">
 
 <div class="row">
-<select id="size">
-<option value="200">200x200</option>
-<option value="300" selected>300x300</option>
-<option value="400">400x400</option>
-<option value="500">500x500</option>
+<select id="shape">
+<option value="dots">Rounded Dots</option>
+<option value="square">Sharp Squares</option>
 </select>
 
 <select id="ecc">
-<option value="L">Low</option>
 <option value="M" selected>Medium</option>
 <option value="Q">High</option>
 <option value="H">Maximum</option>
@@ -251,81 +122,122 @@ font-size:14px;
 <input type="color" id="bg" value="#ffffff">
 </div>
 
-<div class="row">
-<select id="margin">
-<option value="1">Small</option>
-<option value="10" selected>Normal</option>
-<option value="20">Large</option>
-</select>
+<button onclick="generateQR()">Generate QR</button>
+<button onclick="downloadPNG()" style="background:linear-gradient(135deg,#22c55e,#16a34a)">Download PNG</button>
+<button onclick="downloadSVG()" style="background:linear-gradient(135deg,#7dd3fc,#38bdf8)">Download SVG</button>
 
-<select id="format">
-<option value="png">PNG</option>
-<option value="jpg">JPG</option>
-</select>
 </div>
 
-<button onclick="generateQR()">Generate QR</button>
-
-<div class="preview" id="qrBox"></div>
-
-<a id="downloadBtn" style="display:none;">
-<button class="download">Download QR</button>
-</a>
-
+<div class="panel preview">
+<h3>Live Preview</h3>
+<div class="preview-box" id="qr"></div>
+</div>
 </div>
 
 <h2 class="section-title" id="features">Why People Love LumaWave</h2>
 
 <div class="features">
-<div class="card">
-<h3>⚡ Instant</h3>
-<p>Lightning fast QR generation.</p>
+<div class="card"><h3>⚡ Instant</h3><p>Super fast engine</p></div>
+<div class="card"><h3>💎 Premium</h3><p>Looks like a paid tool</p></div>
+<div class="card"><h3>🎨 Custom</h3><p>Colors • Shapes • Styles</p></div>
+<div class="card"><h3>📱 Responsive</h3><p>Perfect on mobile</p></div>
 </div>
 
-<div class="card">
-<h3>🎨 Customizable</h3>
-<p>Colors, sizes, backgrounds.</p>
+<!-- FAQ -->
+<section class="faq" id="faq">
+<h2>Frequently Asked Questions</h2>
+
+<div class="qa">
+<h3>Is LumaWave QR really free?</h3>
+<p>Yes. LumaWave QR is 100% free to use. No hidden charges, no login, no watermarks.</p>
 </div>
 
-<div class="card">
-<h3>💎 Super Clean</h3>
-<p>Looks premium. Feels premium.</p>
+<div class="qa">
+<h3>Can I use these QR codes for my business?</h3>
+<p>Absolutely. You can use LumaWave QR for businesses, restaurants, marketing, events, school projects and more.</p>
 </div>
 
-<div class="card">
-<h3>📱 Mobile Perfect</h3>
-<p>Works on all devices.</p>
+<div class="qa">
+<h3>Do QR codes expire?</h3>
+<p>No. Once generated, your QR code works forever unless the link you used stops working.</p>
 </div>
+
+<div class="qa">
+<h3>Is my data stored?</h3>
+<p>No. We do NOT store your data. Everything is processed instantly and stays only on your browser.</p>
 </div>
+
+<div class="qa">
+<h3>Does it work on all phones?</h3>
+<p>Yes. LumaWave QR works on Android, iPhone, laptops and tablets.</p>
+</div>
+
+</section>
 
 <footer>
 Made with ❤️ by LumaWave • Free Forever
 </footer>
 
 <script>
+
+let qr = new QRCodeStyling({
+width:330,
+height:330,
+type:"png",
+data:"https://lumawave.in",
+dotsOptions:{color:"#000000",type:"dots"},
+backgroundOptions:{color:"#ffffff"}
+});
+
+qr.append(document.getElementById("qr"));
+
 function generateQR(){
-let text=document.getElementById("text").value;
-let size=document.getElementById("size").value;
-let ecc=document.getElementById("ecc").value;
-let color=document.getElementById("color").value.replace("#","");
-let bg=document.getElementById("bg").value.replace("#","");
-let margin=document.getElementById("margin").value;
-let format=document.getElementById("format").value;
+let mode=document.getElementById("mode").value;
+let data="";
 
-if(text.trim()===""){alert("Enter something first 😭");return;}
+if(mode==="url"||mode==="text")
+data=document.getElementById("mainInput").value;
 
-let url=`https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(text)}&color=${color}&bgcolor=${bg}&qzone=${margin}&ecc=${ecc}&format=${format}`;
+if(mode==="wifi"){
+let ssid=prompt("WiFi Name?");
+let pass=prompt("Password?");
+data=`WIFI:T:WPA;S:${ssid};P:${pass};;`;
+}
 
-document.getElementById("qrBox").innerHTML=`<img src="${url}" width="${size}">`;
-let d=document.getElementById("downloadBtn");
-d.href=url;
-d.download="lumawave_qr."+format;
-d.style.display="block";
+if(mode==="card"){
+let name=prompt("Name");
+let org=prompt("Organization");
+let num=prompt("Phone");
+data=`MECARD:N:${name};ORG:${org};TEL:${num};;`;
+}
+
+if(!data.trim()){alert("Enter something first 😭");return;}
+
+qr.update({
+data:data,
+dotsOptions:{type:document.getElementById("shape").value,color:document.getElementById("color").value},
+backgroundOptions:{color:document.getElementById("bg").value}
+});
+}
+
+function downloadPNG(){qr.download({name:"lumawave_qr",extension:"png"})}
+function downloadSVG(){qr.download({name:"lumawave_qr",extension:"svg"})}
+
+</script>
+
+<!-- SEO FAQ STRUCTURED DATA -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{"@type":"Question","name":"Is LumaWave QR free?","acceptedAnswer":{"@type":"Answer","text":"Yes, LumaWave QR is completely free."}},
+{"@type":"Question","name":"Can I use these QR codes commercially?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can use them for business, marketing and more."}},
+{"@type":"Question","name":"Do the QR codes expire?","acceptedAnswer":{"@type":"Answer","text":"No, QR codes do not expire."}},
+{"@type":"Question","name":"Do you store data?","acceptedAnswer":{"@type":"Answer","text":"No, LumaWave does not store your data."}}
+]
 }
 </script>
 
 </body>
 </html>
-
-
-
